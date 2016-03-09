@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Bike Book</string>
+
     <string name="signup">Sign Up</string>
     <string name="signin">Sign In</string>
+
+    <string name="id_card">หมายเลขบัตรประชาชน</string>
+    <string name="password">Password</string>
 </resources>
