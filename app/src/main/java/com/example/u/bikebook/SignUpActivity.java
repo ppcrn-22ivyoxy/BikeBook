@@ -54,6 +54,7 @@ public class SignUpActivity extends AppCompatActivity {
             // Id card False
             myToast("รหัสบัตรประชาชนไม่ถูกต้องค่ะ");
 
+
         }
 
     } // ChickIDcard
