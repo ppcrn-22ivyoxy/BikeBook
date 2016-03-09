@@ -40,10 +40,23 @@ public class SignUpActivity extends AppCompatActivity {
             myToast("กรุณากรอกข้อมูลให้ครบค่ะ");
         } else {
             // No Space
-
+            checkIDcard();
         }
 
     }   // clickSignUp
+
+    private void checkIDcard() {
+
+        if (idCardString.length() == 13) {
+            // Id card True
+
+        } else {
+            // Id card False
+            myToast("รหัสบัตรประชาชนไม่ถูกต้องค่ะ");
+
+        }
+
+    } // ChickIDcard
 
     private void myToast(String strToase) {
 
