@@ -1,5 +1,7 @@
 package com.example.u.bikebook;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,6 +51,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         if (idCardString.length() == 13) {
             // Id card True
+            comfirmData(idCardString, passwordString);
 
         } else {
             // Id card False
@@ -58,6 +61,36 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
     } // ChickIDcard
+
+    private void comfirmData(String idCardString, String passwordString) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.icon_myaccount);
+        builder.setTitle("โปรดตรวจสอบข้อมูล");
+        builder.setMessage("รหัสบัตรประชาชน = " + idCardString + "\n" +
+                "Password = " + passwordString);
+        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                updateDataToServer();
+                dialogInterface.dismiss();
+            }
+        });
+        builder.setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
+
+    }   // confirmData
+
+    private void updateDataToServer() {
+
+
+
+    }   // updatedatatoserver
 
     private void myToast(String strToase) {
 
